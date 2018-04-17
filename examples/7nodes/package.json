@@ -1,0 +1,13 @@
+{
+  "name": "7nodes",
+  "version": "1.0.0",
+  "description": "This example configures 7 nodes, each with their own PrivateTransactionManager. Usage:",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "web3": "^1.0.0-beta.34"
+  }
+}

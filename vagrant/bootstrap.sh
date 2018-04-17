@@ -2,9 +2,8 @@
 set -eu -o pipefail
 
 # install build deps
-add-apt-repository ppa:ethereum/ethereum
 apt-get update
-apt-get install -y build-essential unzip libdb-dev libleveldb-dev libsodium-dev zlib1g-dev libtinfo-dev solc sysvbanner wrk
+apt-get install -y build-essential unzip libdb-dev libleveldb-dev libsodium-dev zlib1g-dev libtinfo-dev sysvbanner wrk
 
 # install constellation
 CVER="0.3.2"
@@ -39,6 +38,11 @@ mv porosity /usr/local/bin && chmod 0755 /usr/local/bin/porosity
 # copy examples
 cp -r /vagrant/examples /home/vagrant/quorum-examples
 chown -R vagrant:vagrant /home/vagrant/quorum /home/vagrant/quorum-examples
+
+# install nodejs
+curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
+apt-get install -y nodejs
+npm install -g node-gyp
 
 # done!
 banner "Quorum"
